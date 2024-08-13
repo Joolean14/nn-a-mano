@@ -105,10 +105,10 @@ $$\text{Costo} = (Y_{pred} - Y_{act})^2$$
 
 
 
-$\frac{\partial \text{Costo}}{\partial w_7} = \frac{\partial \text{Costo}}{\partial Y_{pred}} \cdot \frac{\partial Y_{pred}}{\partial w_7} $
+$\frac{\partial \text{Costo}}{\partial w_7} = \frac{\partial \text{Costo}}{\partial Y_{pred}} \cdot \frac{\partial Y_{pred}}{\partial w_7}$
 
 
-$ \frac{\partial \text{Costo}}{\partial w_7} = 2(Y_{pred} - Y_{act}) \cdot g_1$
+$\frac{\partial \text{Costo}}{\partial w_7} = 2(Y_{pred} - Y_{act}) \cdot g_1$
 
 $\frac{\partial \text{Costo}}{\partial w_7} = 2(24.95-82) \cdot 0.37$
 
@@ -119,7 +119,7 @@ $$\frac{\partial \text{Costo}}{\partial w_7} = -42.2$$
 
 $\frac{\partial \text{Cost}}{\partial b_3} = \frac{\partial \text{Costo}}{\partial Y_{pred}} \cdot \frac{\partial Y_{pred}}{\partial b_3} $
 
-$ \frac{\partial \text{Costo}}{\partial b_3} = 2(Y_{pred} - Y_{act}) \cdot 1$
+$\frac{\partial \text{Costo}}{\partial b_3} = 2(Y_{pred} - Y_{act}) \cdot 1$
 
 $\frac{\partial \text{Costo}}{\partial b_3} = 2(24.95-82) \cdot 1$
 
@@ -141,7 +141,9 @@ $w_7^{upt} = 12 - (0.001 \cdot (-42.2))$
 $$w_7^{upt} = 12.04$$
 
 ### Resultados
+
 $$w_7 = 12$$
+
 $$w_7^{upt} = 12.04$$
 
 ![](img/nn-step-8.png)
@@ -171,19 +173,19 @@ $\frac{\partial g_1}{\partial z_1} = g_1 \cdot (1 - g_1) \Rightarrow \text{ con 
 
 4.
 
-$ \frac{\partial z_1}{\partial w_1} = x_1 \Rightarrow \text{ con respecto a... } z_1 = (w_1 \cdot x_1) + (w_3 \cdot x_2) + (w_5 \cdot x_3) + b_1$
+$\frac{\partial z_1}{\partial w_1} = x_1 \Rightarrow \text{ con respecto a... } z_1 = (w_1 \cdot x_1) + (w_3 \cdot x_2) + (w_5 \cdot x_3) + b_1$
 
 ### Simplificar para $w_1$
 
 $\frac{\partial \text{Costo}}{\partial w_1} = \frac{\partial \text{Costo}}{\partial y_{pred}} \cdot \frac{\partial y_{pred}}{\partial g_1} \cdot \frac{\partial g_1}{\partial z_1}
 \cdot \frac{\partial z_1}{\partial w_1} $
 
-$ \frac{\partial \text{Costo}}{\partial w_1} = 2(y_{pred} - y_{act}) \cdot w_7 \cdot \left[ \frac{1}{1 + e^{-z_1}} \cdot (1 -\frac{1}{1 + e^{-z_1}}) \right] \cdot x_1  $
+$\frac{\partial \text{Costo}}{\partial w_1} = 2(y_{pred} - y_{act}) \cdot w_7 \cdot \left[ \frac{1}{1 + e^{-z_1}} \cdot (1 -\frac{1}{1 + e^{-z_1}}) \right] \cdot x_1  $
 
-$ \frac{\partial \text{Costo}}{\partial w_1} = 2(24.95 - 82) \cdot 12 \cdot \left[ \frac{1}{1 + e^{-(-0.5)}} \cdot (1 -\frac{1}{1 + e^{-(-0.5)}}) \right] \cdot 60  $
+$\frac{\partial \text{Costo}}{\partial w_1} = 2(24.95 - 82) \cdot 12 \cdot \left[ \frac{1}{1 + e^{-(-0.5)}} \cdot (1 -\frac{1}{1 + e^{-(-0.5)}}) \right] \cdot 60  $
 
 
-$$ \frac{\partial \text{Costo}}{\partial w_1} = -19,303$$
+$$\frac{\partial \text{Costo}}{\partial w_1} = -19,303$$
 
 ### Actualizar pesos
 
