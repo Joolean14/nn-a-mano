@@ -206,4 +206,4 @@ $$w_1^{upt} = 193$$
 
 # Fuente
 
-Adaptado por Julián Loaiza de la explicación de Bevan Smith: https://www.youtube.com/watch?v=-zI1bldB8to&list=PLuVnJWOCzbxUAS9YJsDsNEbnttXDov2pe&index=3
+Adaptado por Julián Loaiza de la explicación de Bevan Smith en su canal de youtube.
