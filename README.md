@@ -7,14 +7,14 @@ Este es un ejemplo que actualiza solo un peso de la capa de entrada a la capa oc
 
 # Base de datos
 
-En esta base de datos las $x$ son las horas estudiadas y la $y$ es la calificación obtenida.
+En esta base de datos las $x$ son las horas estudiadas y la $y$ es la calificación obtenida. Estaremos haciendo una regresión obteniendo un único valor.
 
 | Estudiante | $x_1$ | $x_2$ | $x_3$ | $y_{act}$  |
 |---------|----|----|----|----|
 | 1       | 60 | 80 | 5  | 82 |
-| 2       | 70 | 75 | 7  | 94 |
-| 3       | 50 | 55 | 10 | 45 |
-| 4       | 40 | 56 | 7  | 43 |
+| 2       | 70 | 75 | 8  | 94 |
+| 3       | 40 | 51 | 10 | 45 |
+
 
 
 # Propagación
@@ -25,7 +25,9 @@ En esta base de datos las $x$ son las horas estudiadas y la $y$ es la calificaci
 
 ![](/img/nn-step-1.png)
 
-> Pesos y Sesgos son inicializados aleatoriamente
+> Los $pesos$ y $sesgos$ son inicializados aleatoriamente
+
+#### Operación lineal
 
 $z_1 = (w_1 \cdot x_1) + (w_3 \cdot x_2) + (w_5 \cdot x_3) + b_1$
 
@@ -38,6 +40,8 @@ $z_1 = -0.5$
 
 # Aplicar función Sigmoide 
 
+Esta función la estamos usando para agregarle no-linealidad al modelo para que sea más 'flexible' y se fije mejor a la data.
+
 $g_1 = \frac{1}{1+e^{x}}$
 
 $g_1 = \frac{1}{1+e^{-z_1}}$
@@ -49,7 +53,6 @@ $$g_1 = 0.37$$
 #### Inicializo peso y sesgo...
 
 ![](/img/nn-step-4.png)
-
 
 $y_{pred} = (w_7 \cdot g_1) + (w_3 \cdot g_2) + b_3$
 
@@ -70,14 +73,13 @@ $y_{pred} = 24.95$
 
 # Retropropagación
 
-
 ## Gradiente descendiente
 
 Nos movemos en la dirección negativa de la pendiente de una función de error (costo) hasta encontrar un valor mínimo.
 
 ## Derivadas parciales
 
-Las derivadas parciales se refieren a funciones con múltiples variables.
+Las derivadas parciales se refieren a funciones con múltiples variables. 
 
 $$f(x, y, z)$$
 
@@ -103,10 +105,7 @@ $$\text{Costo} = (Y_{pred} - Y_{act})^2$$
 
 ### $w_7$
 
-
-
 $\frac{\partial \text{Costo}}{\partial w_7} = \frac{\partial \text{Costo}}{\partial Y_{pred}} \cdot \frac{\partial Y_{pred}}{\partial w_7}$
-
 
 $\frac{\partial \text{Costo}}{\partial w_7} = 2(Y_{pred} - Y_{act}) \cdot g_1$
 
@@ -129,7 +128,6 @@ $$\frac{\partial \text{Costo}}{\partial b_3} = -114.1$$
 
 ## Actualizando $w_7$
 Recorre la función de pérdida en la dirección de las derivadas parciales negativas, dando pequeños pasos $\eta$ (tasa de aprendizaje).
-
 
 Tasa de Aprendizaje: 
 $$\eta = 0.01$$
