@@ -1,9 +1,9 @@
 # General
 
-![](/nn-overview.png)
+![](/img//nn-Full.png)
 
 
-Este es un ejemplo que actualiza solo un peso de la capa de entrada a la capa oculta de una red. $w_1$
+Este es un ejemplo que actualiza solo un peso de la capa de entrada a la capa oculta de una red. $w_1$ y, solo mostraremos la parte superior del diagrama para no hacer la explicación tan extensa.
 
 # Base de datos
 
